@@ -22,9 +22,7 @@ export async function GET(request: NextRequest) {
       orderBy: { createdAt: 'desc' },
     });
 
-    // Transform to match the expected format
     const formattedAnalyses = analyses.map((analysis: any) => {
-      // The analysis field contains the full AI response structure
       const analysisData = analysis.analysis as Record<string, unknown>;
 
       let analysisText = '';

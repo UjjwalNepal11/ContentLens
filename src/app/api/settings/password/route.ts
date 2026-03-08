@@ -32,7 +32,6 @@ export async function POST(request: NextRequest) {
 
     const hasPassword = userData.passwordEnabled;
 
-    // Use type assertion for Clerk methods
     const usersApi = client.users as any;
 
     if (!hasPassword) {
@@ -63,8 +62,7 @@ export async function POST(request: NextRequest) {
   } catch (error: any) {
     console.error("Password change error:", error);
     console.error("Error details:", JSON.stringify(error, Object.getOwnPropertyNames(error)));
-    
-    // Handle specific Clerk errors
+ 
     if (error.errors && error.errors.length > 0) {
       const clerkError = error.errors[0];
       console.error("Clerk error code:", clerkError.code);
@@ -83,7 +81,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Check for other common error patterns
     if (error.message) {
       return NextResponse.json(
         { success: false, error: error.message },

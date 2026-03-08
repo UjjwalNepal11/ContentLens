@@ -8,9 +8,8 @@ import { recordActivity, ActivityType } from "@/lib/activity";
 import { checkRateLimit, getRateLimitHeaders } from "@/lib/rate-limit";
 
 const ANALYSIS_RATE_LIMIT = 10;
-const ANALYSIS_WINDOW_MS = 60000; // 1 minute
+const ANALYSIS_WINDOW_MS = 60000; 
 
-// Allowed MIME types for image uploads
 const ALLOWED_IMAGE_TYPES = [
   "image/jpeg",
   "image/png",

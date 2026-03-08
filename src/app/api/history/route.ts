@@ -41,9 +41,7 @@ export async function GET(request: NextRequest) {
       analyses.pop();
     }
 
-    // Transform to match the expected format
     const formattedAnalyses: AnalysisHistoryItem[] = analyses.map((analysis: Analysis): AnalysisHistoryItem => {
-      // The analysis field contains the full AI response structure
       const analysisData = analysis.analysis as Record<string, unknown>;
 
       let analysisText = "";
@@ -70,7 +68,6 @@ export async function GET(request: NextRequest) {
         categories = topics || keywords || cats || [];
       }
 
-      // Extract filename from text if it exists in the format [File: name] or [Image: name]
       let fileName = (analysis as any).fileName || undefined;
       if (!fileName && analysis.text) {
         if (analysis.text.startsWith("[File: ")) {
@@ -109,7 +106,6 @@ export async function GET(request: NextRequest) {
         orderBy: { createdAt: "desc" },
       });
 
-      // Transform all analyses for analytics
       const allFormattedAnalyses: AnalysisHistoryItem[] = allAnalyses.map((analysis: Analysis): AnalysisHistoryItem => {
   const analysisData = analysis.analysis as Record<string, unknown>;
 
@@ -134,7 +130,6 @@ export async function GET(request: NextRequest) {
     categories = topics || keywords || cats || [];
   }
 
-        // Extract filename from text if it exists in the format [File: name] or [Image: name]
         let fileName = (analysis as any).fileName || undefined;
   if (!fileName && analysis.text) {
     if (analysis.text.startsWith("[File: ")) {

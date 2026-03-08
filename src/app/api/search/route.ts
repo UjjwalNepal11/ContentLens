@@ -41,7 +41,6 @@ export async function GET(request: NextRequest) {
       take: limit,
     });
 
-    // Transform results
     const results = analyses.map((analysis: Analysis) => {
       const analysisData = analysis.analysis as any;
       return {

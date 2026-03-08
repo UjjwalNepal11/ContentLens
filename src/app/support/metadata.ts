@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const siteUrl = "https://contentlens.ai";
+const siteUrl = "https://contentlens.bhagwatnepal.com.np";
 
 export const metadata: Metadata = {
   title: "Support - ContentLens",

@@ -2,7 +2,6 @@ import { create } from "zustand";
 import { AnalysisHistoryItem, AnalysisHistoryFilters, AnalysisResult } from "./types";
 import { useSessionAnalysisStore } from "./session-store";
 
-// Helper function to generate unique ID
 const generateId = () => Date.now().toString() + Math.random().toString(36).substr(2, 9);
 
 const DELETED_NOTIFICATIONS_KEY = 'deleted_notification_ids';

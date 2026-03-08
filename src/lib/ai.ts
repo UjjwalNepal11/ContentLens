@@ -327,12 +327,7 @@ function getSystemPrompt(analysisType?: string): string {
     return ANALYSIS_PROMPTS.general;
 }
 
-/**
- * Helper function to parse and clean JSON response from AI
- * Handles markdown code blocks, whitespace, and other formatting issues
- */
 function parseAIResponse(responseText: string): any {
-  // Step 1: Remove BOM (Byte Order Mark) if present
     let cleaned = responseText.replace(/^\uFEFF/, '');
 
     cleaned = cleaned.trim();

@@ -17,17 +17,13 @@ export async function GET(request: NextRequest) {
 
     const sessionsResponse = await client.sessions.getSessionList({ userId });
 
-    // Use type assertion to access the data array
     const sessions = (sessionsResponse as any).data || [];
 
     if (sessions.length > 0) {
       console.log("Raw session data:", JSON.stringify(sessions[0], null, 2));
     }
 
-    // Format session data - Clerk sessions may have nested device/location objects
-    // Location data depends on Clerk's configuration - it may not always be available
     const formattedSessions = await Promise.all(sessions.map(async (session: any) => {
-      // Try to get device info from different possible paths
       const deviceInfo = session.device || session.actor?.device || {};
       const locationInfo = session.location || session.actor?.location || {};
 
@@ -59,7 +55,6 @@ export async function GET(request: NextRequest) {
       };
     }));
 
-    // Sort by last active (most recent first)
     formattedSessions.sort((a: any, b: any) => {
       const dateA = new Date(a.lastActiveAt || 0).getTime();
       const dateB = new Date(b.lastActiveAt || 0).getTime();

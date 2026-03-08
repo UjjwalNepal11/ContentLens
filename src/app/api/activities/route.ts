@@ -20,7 +20,6 @@ export async function GET(request: NextRequest) {
       orderBy: { createdAt: 'desc' },
     });
 
-    // Transform to match the expected format
     const formattedActivities = activities.map((activity: any) => ({
       id: activity.id,
       type: activity.type,

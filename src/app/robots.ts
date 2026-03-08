@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-const siteUrl = "https://contentlens.ai";
+const siteUrl = "https://contentlens.bhagwatnepal.com.np";
 
 export default function robots(): MetadataRoute.Robots {
   return {

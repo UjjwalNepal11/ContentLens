@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://contentlens.ai";
+const siteUrl = "https://contentlens.bhagwatnepal.com.np";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
   category: "technology",
   classification: "AI Content Analysis Tool",
   verification: {
-    google: "google-site-verification-code",
+    google: "VSmaDrkP1GB4Jag58mz_gawBWdIl4u3Zq4lPuLlL5m4",
     yandex: "yandex-verification-code",
   },
 };
@@ -99,7 +99,6 @@ export const viewport: Viewport = {
     { media: "(prefers-color-scheme: dark)", color: "#09090b" },
   ],
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
