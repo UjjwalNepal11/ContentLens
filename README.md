@@ -13,11 +13,11 @@ ContentLens is an AI-powered content intelligence platform that analyzes, summar
 
 ### Landing Page
 
-(src/app/s2.png)
+![Landing Page](src/app/s2.png)
 
 ### Dashboard
 
-(src/app/s1.png)
+![Dashboard](src/app/s1.png)
 
 ## Live Demo
 
