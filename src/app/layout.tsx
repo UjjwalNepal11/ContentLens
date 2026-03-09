@@ -59,21 +59,12 @@ export const metadata: Metadata = {
     title: "ContentLens - AI-Powered Content Intelligence",
     description:
       "Analyze, summarize, and extract insights from any content with AI-powered content intelligence. Understand sentiment, tone, keywords, and readability in seconds.",
-    images: [
-      {
-        url: `${siteUrl}/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: "ContentLens - AI-Powered Content Intelligence",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "ContentLens - AI-Powered Content Intelligence",
     description:
       "Analyze, summarize, and extract insights from any content with AI-powered content intelligence.",
-    images: [`${siteUrl}/og-image.png`],
     creator: "@contentlens",
   },
   alternates: {
@@ -149,7 +140,87 @@ export default function RootLayout({
     ],
   };
 
-  const jsonLd = [softwareSchema, organizationSchema];
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What is ContentLens?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "ContentLens is an AI-powered content intelligence platform that analyzes, summarizes, and extracts insights from any content. It provides sentiment analysis, tone detection, keyword extraction, readability scoring, and more."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "How does AI content analysis work?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Our AI algorithms analyze your content at multiple levels, examining sentiment, tone, keywords, readability, and structure to provide comprehensive insights in seconds."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "What types of content can I analyze?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "You can analyze text content including articles, emails, social media posts, reviews, and more. We also support image analysis using OCR technology to extract and analyze text from images."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Is my data secure?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, we take data security seriously. Your content stays private and secure. We use enterprise-grade security with Clerk authentication and all data is encrypted."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "What analysis modes are available?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "ContentLens offers multiple analysis modes including General Analysis, Sentiment Analysis, Text Summary, Keyword Extraction, Readability Analysis, and Grammar Check."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Can I save my analysis history?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, all your analyses are securely stored and accessible anytime through your analytics dashboard. You can view, search, and export your analysis history."
+        }
+      }
+    ]
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteUrl
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Features",
+        item: `${siteUrl}#features`
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "How It Works",
+        item: `${siteUrl}#how-it-works`
+      }
+    ]
+  };
+
+  const jsonLd = [softwareSchema, organizationSchema, faqSchema, breadcrumbSchema];
 
   return (
     <ClerkProvider
