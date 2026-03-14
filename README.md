@@ -21,7 +21,7 @@ ContentLens is an AI-powered content intelligence platform that analyzes, summar
 
 ## Live Demo
 
-> 🔗 **Live Demo**: (https://contentlens.bhagwatnepal.com.np )
+> 🔗 [Live Demo](https://contentlens.bhagwatnepal.com.np )
 
 ## Features
 
